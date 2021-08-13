@@ -19,7 +19,7 @@ function App():JSX.Element {
 
   /* [변수, 변수를 바꿀수 있는 함수] = React.useState(초기값); */
   const [var2, setVar2] = React.useState<number>(30);
-  
+  const [var3, setVar3] = React.useState<number>(100);
 
   return (
     <div style={{
@@ -35,6 +35,11 @@ function App():JSX.Element {
         {var2}
       </Typography>
 
+      <Typography variant="h1">
+        {/* va3 출력 하는 곳 */}
+        {var3}
+      </Typography>
+
       <Button 
         variant="contained"
         onClick={() => {
@@ -42,6 +47,14 @@ function App():JSX.Element {
           setVar2(newTemp);
         }}
       >add</Button>
+
+      <Button 
+        variant="contained"
+        onClick={() => {
+          const newTemp = var2 - 1;
+          setVar2(newTemp);
+        }}
+      >minus</Button>
     </div>
   );
 }
